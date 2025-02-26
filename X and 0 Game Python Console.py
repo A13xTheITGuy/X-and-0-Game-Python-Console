@@ -1,7 +1,6 @@
 import numpy as np
 import random as rand
 arrX0=np.array([-1,-1,-1,-1,-1,-1,-1,-1,-1]) 
-# I initialized with "-1" the positions that do not have a value
 print('\nX and O game in Python!')
 
 def game_display():
@@ -95,7 +94,7 @@ while 1:
         pozX=int(input("X Turn, enter a number from 1-9: ")) #pozX 
         while input_validation(pozX)==0:
             ok=0
-            pozX=int(input("|ERROR| Invalid input ( must be in [1,9] and a position which was not introduced before! )\nX Turn, enter a number from 1-9: ")) #pozX 
+            pozX=int(input("|ERROR| Invalid input ( must be in [1,9] and a position which was not introduced before! )\nX Turn, enter a number from 1-9: ")) 
         arrX0[pozX-1]=1 
         pass_g=-1  
         if game_stop_X()==1:
@@ -106,7 +105,7 @@ while 1:
             cX+=1
             arrX0=np.array([-1,-1,-1,-1,-1,-1,-1,-1,-1])
             print(f'Score ( X , 0 ): {cX} - {c0}', end='\n')
-            Regame=int(input("Do you want to play again? ( YES = 1, NO = 0): ")) #poz0 
+            Regame=int(input("Do you want to play again? ( YES = 1, NO = 0): "))
             if Regame==1:
                 pass_g=1
             else:
@@ -123,9 +122,9 @@ while 1:
             if(count==9):
                 print('No one is the winner!\n')
                 break
-            poz0=int(input("0 Turn, enter a number from 1-9: ")) #poz0 
+            poz0=int(input("0 Turn, enter a number from 1-9: "))
             while input_validation(poz0)==0:
-                poz0=int(input("|ERROR| Invalid input ( must be in [1,9] and a position which was not introduced before! )\n0 Turn, enter a number from 1-9: ")) #poz0
+                poz0=int(input("|ERROR| Invalid input ( must be in [1,9] and a position which was not introduced before! )\n0 Turn, enter a number from 1-9: "))
             arrX0[poz0-1]=0
             pass_g=-1  
             if game_stop_0()==1:
@@ -154,10 +153,10 @@ while 1:
         if(count==9):
             print('No one is the winner!\n')
             break
-        pozX=int(input("X Turn, enter a number from 1-9: ")) #pozX 
+        pozX=int(input("X Turn, enter a number from 1-9: ")) 
         while input_validation(pozX)==0:
             ok=0
-            pozX=int(input("|ERROR| Invalid input ( must be in [1,9] and a position which was not introduced before! )\nX Turn, enter a number from 1-9: ")) #pozX 
+            pozX=int(input("|ERROR| Invalid input ( must be in [1,9] and a position which was not introduced before! )\nX Turn, enter a number from 1-9: "))
         arrX0[pozX-1]=1  
         pass_g=-1  
         if game_stop_X()==1:
@@ -168,7 +167,7 @@ while 1:
             cX+=1
             arrX0=np.array([-1,-1,-1,-1,-1,-1,-1,-1,-1])
             print(f'Score ( X , 0 ): {cX} - {c0}', end='\n')
-            Regame=int(input("Do you want to play again? (YES = 1, NO = 0): ")) #poz0 
+            Regame=int(input("Do you want to play again? (YES = 1, NO = 0): "))
             if Regame==1:
                 pass_g=1
             else:
@@ -188,7 +187,7 @@ while 1:
             poz0=rand.randint(0,9)
             while input_validation(poz0)==0:
                 poz0=rand.randrange(0,9,1)
-            print(f"0 (bot) Turn, enter a number from 1-9: {poz0}") #poz0 
+            print(f"0 (bot) Turn, enter a number from 1-9: {poz0}")
             arrX0[poz0-1]=0
             pass_g=-1  
             if game_stop_0()==1:
@@ -199,7 +198,7 @@ while 1:
                 c0+=1
                 arrX0=np.array([-1,-1,-1,-1,-1,-1,-1,-1,-1])
                 print(f'Score ( X , 0 ): {cX} - {c0}', end='\n')
-                Regame=int(input("Do you want to play again? (YES  = 1, NO = 0): ")) #poz0 
+                Regame=int(input("Do you want to play again? (YES  = 1, NO = 0): "))
                 if Regame==1:
                     pass_g=1
                 else:
